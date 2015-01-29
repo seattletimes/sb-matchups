@@ -1,0 +1,42 @@
+.stats {
+  text-align: center;
+
+  .row {
+    display: block;
+    clear: both;
+    // border: 1px solid @border;
+
+    &:last-child {
+      // border-bottom: 1px solid @border;
+    }
+
+    &::after {
+      content: " ";
+      height: 0;
+      display: block;
+      clear: both;
+    }
+  }
+
+  .half, section {
+    float: left;
+    width: 50%;
+    padding: 8px;
+
+    &:first-child {
+      // border-right: 1px solid @border;
+    }
+  }
+
+  .name {
+    font-weight: bold;
+  }
+
+  label {
+    color: @primary;
+    border-bottom: 1px solid @border;
+    padding-top: 8px;
+    text-transform: uppercase;
+  }
+
+}

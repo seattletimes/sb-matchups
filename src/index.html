@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <%= t.include("partials/_adHead.html") %>
+  </head>
+  <body>
+
+    <main>
+      <section class="intro">
+        This is intro text blah blah blah
+      </section>
+      <section class="matchup">
+        <img class="belichick left-side profile" src="assets/BillBelichickProfile.jpg">
+        <img class="carroll right-side profile" src="assets/PeteCarrollProfile.jpg">
+        <div class="overlay-column">
+          <div class="overlay">
+            <%= t.include("_coaches.html") %>
+          </div>
+        </div>
+      </section>
+      <section class="matchup">
+        <img class="sherman right-side profile" src="assets/Profile_Sherman.jpg">
+        <img class="revis left-side profile" src="assets/Profile_Revis.jpg">
+        <div class="overlay-column">
+          <div class="overlay">
+            <%= t.include("_defense.html") %>
+          </div>
+        </div>
+      </section>
+      <section class="matchup">
+        <img class="wilson right-side profile" src="assets/Profile_RussellWilson.jpg">
+        <img class="brady left-side profile" src="assets/Profile_TomBrady.jpg">
+        <div class="overlay-column">
+          <div class="overlay">
+            <%= t.include("_qb.html") %>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+    <% /*= t.include("partials/_adFoot.html"); */ %>
+    <%= t.include("partials/_workHere.html") %>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.transform(...) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -ms-transform: @arguments;
+  transform: @arguments;
+}
+
+.lorem {
+  background: magenta;
+  color: cyan;
+  font-weight: bold;
+}
+
+@narrow: ~"(max-aspect-ratio: 12/9)";
+
+@primary: blue;
+@border: #CCC;
+
+@sans: sans-serif;
+
+body {
+  margin: 0;
+  background: black;
+  font-family: @sans;
+  line-height: 1.4;
+}
+
+main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.intro {
+  height: 500px;
+  width: 700px;
+  margin: auto;
+  background: magenta;
+  position: relative;
+  z-index: 999;
+}
+
+@import "scrolling";
+@import "stats";
