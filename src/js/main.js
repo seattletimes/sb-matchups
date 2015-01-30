@@ -1,9 +1,7 @@
 /* esnext:true */
 
 //trigger web animations
-setTimeout(function() {
-  document.querySelector("main.startup").className = "ready";
-}, 200);
+setTimeout(() => document.querySelector("main.startup").className = "ready", 200);
 
 var Share = require("share");
 
@@ -23,11 +21,7 @@ var matchups = [].slice.call(document.querySelectorAll(".matchup"));
 var debounce = function(f, d) {
   d = d || 100;
   var timeout = null;
-  return function() {
-    var args = [];
-    for (var i = 0; i < arguments.length; i++) {
-      args[i] = arguments[i];
-    }
+  return function(...args) {
     if (timeout) return;
     timeout = setTimeout(function() {
       timeout = null;
@@ -41,9 +35,9 @@ window.addEventListener("scroll", debounce(function() {
   var h = window.innerHeight;
   for (var i = 0; i < matchups.length; i++) {
     var match = matchups[i];
-    var bounds = match.getBoundingClientRect();
-    var top = bounds.top < 0 ? 0 : bounds.top;
-    var bottom = bounds.bottom > h ? h : bounds.bottom;
+    var { top, bottom } = match.getBoundingClientRect();
+    top = top < 0 ? 0 : top;
+    bottom = bottom > h ? h : bottom;
     var ratio = (bottom - top) / h;
     if (ratio > .5) {
       match.className += " active";
