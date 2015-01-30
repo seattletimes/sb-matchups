@@ -50,7 +50,7 @@
     position: absolute;
     z-index: 999;
     top: 100px;
-    width: 30%;
+    max-width: 30%;
     .transform(translateX(0) translateY(0));
     .transform(perspective(700px) translateX(0) translateY(0) rotateY(0) scale(1));
     transition: transform 1s ease-out;
@@ -70,7 +70,7 @@
     }
 
     &.right-side {
-      right: 40px;
+      right: 20px;
 
       // .startup & {
       //   .transform(translateX(-@x) translateY(@y) scale(@scale));
