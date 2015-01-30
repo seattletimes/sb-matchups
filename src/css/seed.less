@@ -43,6 +43,20 @@ body {
   line-height: 1.4;
 }
 
+a {
+  color: @seaGray;
+  text-decoration: none;
+  border: none;
+
+  img {
+    border: none;
+  }
+
+  &:hover {
+    color: @seaBlue;
+  }
+}
+
 @import "page";
 @import "scrolling";
 @import "stats";
