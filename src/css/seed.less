@@ -13,39 +13,37 @@
 }
 
 .lorem {
-  background: magenta;
-  color: cyan;
-  font-weight: bold;
+  // background: magenta;
+  // color: cyan;
+  // font-weight: bold;
 }
 
-@narrow: ~"(max-aspect-ratio: 12/9)";
+@mobile: ~"(max-width: 480px)";
+@tablet: ~"(max-width: 1024px)";
 
-@primary: blue;
-@border: #CCC;
+@hed: Oswald, Helvetica, Arial, sans-serif;
+@body: 'Open Sans', sans-serif;
+@sans-serif: Helvetica, Arial, sans-serif;
+@serif: Georgia, Times, serif;
 
-@sans: sans-serif;
+@seaGreen: #1DD83C;
+@seaBlue: #00163F;
+@seaGray: #AAA;
+@st-blue: #09334B;
+@gray: #333;
+@light-gray: #DDD;
+@patRed: #C80815;
+
+@primary: @seaBlue;
 
 body {
   margin: 0;
   background: black;
-  font-family: @sans;
+  font-family: @body;
   line-height: 1.4;
 }
 
-main {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-.intro {
-  height: 500px;
-  width: 700px;
-  margin: auto;
-  background: magenta;
-  position: relative;
-  z-index: 999;
-}
-
+@import "page";
 @import "scrolling";
 @import "stats";
+@import "graphs";

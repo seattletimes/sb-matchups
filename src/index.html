@@ -3,6 +3,8 @@
   <head>
     <title><%= json.project.title %></title>
     <meta charset="utf-8">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:700,400|Open+Sans:600,400' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <%= t.include("partials/_adHead.html") %>
@@ -11,36 +13,56 @@
 
     <main>
       <section class="intro">
-        This is intro text blah blah blah
+        <h1>Patriots</h1>
+        <h2>vs.</h2>
+        <h1>Seahawks</h1>
+        <h3>Super Bowl 49 matchup</h3>
+
+        <p>
+          Intro text goes here and is super exciting.
+
+        <div class="social">
+          <a class="share"></a>
+        </div>
       </section>
       <section class="matchup">
         <img class="belichick left-side profile" src="assets/BillBelichickProfile.jpg">
         <img class="carroll right-side profile" src="assets/PeteCarrollProfile.jpg">
         <div class="overlay-column">
+          <h1>The Coaches</h1>
           <div class="overlay">
             <%= t.include("_coaches.html") %>
           </div>
         </div>
       </section>
       <section class="matchup">
-        <img class="sherman right-side profile" src="assets/Profile_Sherman.jpg">
         <img class="revis left-side profile" src="assets/Profile_Revis.jpg">
+        <img class="sherman right-side profile" src="assets/Profile_Sherman.jpg">
         <div class="overlay-column">
+          <h1>Cornerbacks</h1>
           <div class="overlay">
             <%= t.include("_defense.html") %>
           </div>
         </div>
       </section>
       <section class="matchup">
-        <img class="wilson right-side profile" src="assets/Profile_RussellWilson.jpg">
         <img class="brady left-side profile" src="assets/Profile_TomBrady.jpg">
+        <img class="wilson right-side profile" src="assets/Profile_RussellWilson.jpg">
         <div class="overlay-column">
+          <h1>Quarterbacks</h1>
           <div class="overlay">
             <%= t.include("_qb.html") %>
           </div>
         </div>
       </section>
     </main>
+
+    <footer>
+      <a class="logo" href="http://seattletimes.com">
+        <img src="./assets/st-logo.png">
+      </a>
+      <a class="share-bottom"></a>
+    </footer>
 
     <script src="app.js"></script>
     <%= json.project.production ? t.include("partials/_adFoot.html") : "" %>

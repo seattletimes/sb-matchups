@@ -1,5 +1,26 @@
+.overlay {
+  background: @light-gray;
+  padding: 10px;
+}
+
 .stats {
   text-align: center;
+
+  h2 {
+    text-align: left;
+    font-family: @hed;
+    font-size: 20px;
+  }
+
+  em {
+    color: darken(@seaGreen, 30%);
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  .prose {
+    text-align: left;
+  }
 
   .row {
     display: block;
@@ -33,10 +54,10 @@
   }
 
   label {
-    color: @primary;
-    border-bottom: 1px solid @border;
+    color: darken(@seaGreen, 20%);
     padding-top: 8px;
     text-transform: uppercase;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.2);
   }
 
 }

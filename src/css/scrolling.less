@@ -1,29 +1,33 @@
 .matchup {
+  text-align: center;
 
-  @media @narrow {
+  @media @tablet {
     height: auto;
+    padding-top: 20px;
   }
 
   .overlay-column {
+    text-align: left;
     z-index: 999;
     position: relative;
     margin: auto;
-    width: 50%;
+    width: 40%;
     padding: 200px 50px 0;
     height: 100%;
     // background: linear-gradient(to right, transparent 0, black 25%, black 75%, transparent 100%);
 
-    @media @narrow {
+    @media @mobile {
       background: transparent;
       width: 100%;
       clear: both;
       padding: 0;
     }
-  }
 
-  .overlay {
-    background: white;
-    padding: 10px;
+    @media @tablet {
+      width: 80%;
+      margin: auto;
+      padding: 0;
+    }
   }
 
   .profile {
@@ -34,12 +38,16 @@
     max-width: 50%;
     height: 100%;
 
-    @media @narrow {
+    @media @tablet {
       position: relative;
-      float: left;
-      width: 50%;
+      display: inline-block;
+      width: 30%;
       height: auto;
       opacity: 1;
+    }
+
+    @media @mobile {
+      width: 50%;
     }
 
     @distance: 20%;
@@ -51,7 +59,7 @@
       transform-origin: left;
       .transform(translateX(-@distance));
       .transform(perspective(@perspective) translateX(-@distance) rotateY(@rotation));
-      @media @narrow { .transform(none) }
+      @media @tablet { .transform(none) }
     }
 
     &.right-side {
@@ -59,7 +67,7 @@
       transform-origin: right;
       .transform(translateX(@distance));
       .transform(perspective(@perspective) translateX(@distance) rotateY(-@rotation));
-      @media @narrow { .transform(none) }
+      @media @tablet { .transform(none) }
     }
 
   }

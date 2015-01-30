@@ -1,4 +1,12 @@
 /* esnext:true */
+var Share = require("share");
+
+new Share(".share");
+new Share(".share-bottom", {
+  ui: {
+    flyout: "top left"
+  }
+});
 
 var matchups = [].slice.call(document.querySelectorAll(".matchup"));
 

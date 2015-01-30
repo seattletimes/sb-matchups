@@ -1,5 +1,5 @@
 <p>
-  Pete Carroll and Bill Belichick, the coaches in Super Bowl XLIX, have accomplished plenty already in their careers. Carroll became only the third coach to win a national championship in college football and a Super Bowl when the Seahawks beat the Broncos in Super Bowl XLVIII, while Belichick won three Super Bowls in four seasons.
+  Bill Belichick and Pete Carroll, the coaches in Super Bowl XLIX, have accomplished plenty already in their careers. Carroll became only the third coach to win a national championship in college football and a Super Bowl when the Seahawks beat the Broncos in Super Bowl XLVIII, while Belichick won three Super Bowls in four seasons.
 
 <p>
   But a victory would put them in rare company. Belichick is attempting to become only the second coach to win four Super Bowls (he has come up short in two previous attempts at a fourth victory) while Carroll is attempting to become the seventh coach to win consecutive Super Bowls.
@@ -7,7 +7,28 @@
 <p>
   Each was also fired from their first NFL head-coaching jobs, but they have come a long way to achieve success.
 
+<div class="graphs">
+  <h2>Career playoff wins, including playoffs</h2>
+<%
+  var wins = {
+    "Don Shula": { count: 347, team: "patriots" },
+    "George Halas": { count: 324 },
+    "Tom Landry": { count: 270 },
+    "Bill Belichick": { count: 232 },
+    "Pete Carroll": { count: 91, team: "seahawks" }
+  }
+  for (var coach in wins) {
+    var count = wins[coach].count;
+    var team = wins[coach].team || "";
+%>
+  <div class="bar <%= team %>" style="width: <%= count / 347 * 100 %>%"><%= coach %> (<%= count %>)</div>
+<%
+  }
+%>
+</div>
+
 <div class="stats">
+  <h2>Stats</h2>
   <div class="row">
     <div class="half name"> Bill Belichick </div>
     <div class="half name"> Pete Carroll </div>
@@ -20,38 +41,24 @@
     <section> 63 </section>
   </div>
   <label class="row">
-    Record at first NFL head-coaching job
+    Record as NFL head coaches before current jobs
   </label>
   <div class="row">
     <section> 36-44, four seasons with Cleveland Browns </section>
-    <section> 6-10, one season with New York Jets </section>
-  </div>
-  <label class="row">
-    Record at second NFL head-coaching job
-  </label>
-  <div class="row">
-    <section class="lorem"> ? </section>
-    <section> 27-21, three seasons with New England Patriots </section>
+    <section> 33-31, one season with New York Jets and three seasons with the New England Patriots</section>
   </div>
   <label class="row">
     Record with current team
   </label>
   <div class="row">
     <section> 175-65, 15 seasons </section>
-    <section> 50-30, five season </section>
-  </div>
-  <label class="row">
-    Career playoff wins
-  </label>
-  <div class="row">
-    <section> 21, the most in NFL history. Tom Landry won 20 playoff games with the Cowboys. </section>
-    <section class="lorem"> ? </section>
+    <section> 50-30, five seasons </section>
   </div>
   <label class="row">
     Career playoff record
   </label>
   <div class="row">
-    <section> 21-9 </section>
+    <section> 21-9. The 21 victories are the most in NFL history. Tom landry won 20 playoff games with the Cowboys. </section>
     <section> 8-4 </section>
   </div>
   <label class="row">
@@ -62,13 +69,6 @@
     <section> 7-2 </section>
   </div>
   <label class="row">
-    Career wins, including playoffs
-  </label>
-  <div class="row">
-    <section> 232, fourth-highest in NFL history. Don Shula (347), George Halas (324) and Tom Landry (270) have more. </section>
-    <section class="lorem"> ? </section>
-  </div>
-  <label class="row">
     Conference championships won
   </label>
   <div class="row">
@@ -76,32 +76,11 @@
     <section> 2 (2013, 2014) </section>
   </div>
   <label class="row">
-    Record at USC
-  </label>
-  <div class="row">
-    <section class="lorem"> ? </section>
-    <section> 97-19, nine seasons </section>
-  </div>
-  <label class="row">
     Super Bowls won
   </label>
   <div class="row">
     <section> 3 (2001, 2003, 2004) </section>
     <section> 1 (2013) </section>
-  </div>
-  <label class="row">
-    Pac-10 championships won
-  </label>
-  <div class="row">
-    <section class="lorem"> ? </section>
-    <section> 7 (2002-2008) </section>
-  </div>
-  <label class="row">
-    National championships won
-  </label>
-  <div class="row">
-    <section class="lorem"> ? </section>
-    <section> 2 (2003, 2004) </section>
   </div>
 
 </div>

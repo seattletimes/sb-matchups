@@ -1,0 +1,41 @@
+.graphs {
+
+  h2 {
+    font-size: 20px;
+    font-family: @hed;
+  }
+
+  .bar {
+    height: 2em;
+    line-height: 2em;
+    background: @gray;
+    color: @light-gray;
+    overflow: visible;
+    padding-left: 4px;
+    margin-bottom: 3px;
+    font-size: 14px;
+    white-space: nowrap;
+    position: relative;
+
+    &.patriots {
+      background: @patRed;
+    }
+
+    &.seahawks {
+      background: @seaBlue;
+    }
+
+    &.outside {
+      .label {
+        position: absolute;
+        left: calc(~"100% + 5px");
+        color: black;
+      }
+    }
+  }
+
+  .ellipsis {
+    display: block;
+    font-weight: bold;
+  }
+}
