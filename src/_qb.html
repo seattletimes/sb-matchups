@@ -9,6 +9,7 @@
     <section class="name">Brady</section>
     <section class="name">Wilson</section>
   </div>
+
   <label class="row">
     Age
   </label>
@@ -16,6 +17,7 @@
     <section class="numeral"> 37 </section>
     <section class="numeral"> 26 </section>
   </div>
+
   <label class="row">
     Height
   </label>
@@ -23,6 +25,7 @@
     <section class="numeral"> 6'4" </section>
     <section class="numeral"> 5'11" </section>
   </div>
+
   <label class="row">
     Weight
   </label>
@@ -30,6 +33,7 @@
     <section class="numeral"> 225 </section>
     <section class="numeral"> 206 </section>
   </div>
+
   <label class="row">
     Career regular-season wins
   </label>
@@ -37,6 +41,7 @@
     <section class="prose"> <b>160</b>, third-most by a quarterback in NFL history. Trails only Brett Favre (186) and Peyton Manning (179). </section>
     <section class="prose"> <b>36</b>, the most by a quarterback in his first three seasons in the Super Bowl era (since 1966). </section>
   </div>
+
   <label class="row">
     Career playoff winning percentage
   </label>
@@ -44,6 +49,41 @@
     <section> <b>.714</b>, the highest by a quarterback with at least 20 playoff starts. He is 20-8 overall. </section>
     <section> <b>.857</b>, a 6-1 record built over three playoff appearances and consecutive Super Bowl berths. </section>
   </div>
+
+  <div class="graphs">
+  <%
+    var yardage = {
+      "Brett Favre": { count: 71838 },
+      "Peyton Manning": { count: 69691 },
+      "Dan Marino": { count: 61361 },
+      "Drew Brees": { count: 56033 },
+      "Tom Brady": { count: 53258, team: "patriots" },
+      "Russell Wilson": { count: 9950, team: "seahawks outside" }
+    };
+
+    var passes = {
+      "Peyton Manning": { count: 530 },
+      "Brett Favre": { count: 508 },
+      "Dan Marino": { count: 420 },
+      "Drew Brees": { count: 396 },
+      "Tom Brady": { count: 392, team: "patriots" },
+      "Russell Wilson": { count: 72, team: "seahawks outside" }
+    };
+  %>
+    <label class="row">Career regular-season passing yards</label>
+  <%
+    for (var player in yardage) {
+      var count = yardage[player].count;
+      var team = yardage[player].team || "";
+  %>
+    <div class="bar <%= team %>" style="width: <%= count / 71838 * 100 %>%">
+      <span class="label"><%= player %> - <%= grunt.template.formatNumber(count) %> yards</span>
+    </div>
+  <%
+    }
+  %>
+  </div>
+
   <label class="row">
     Career playoff passing yards
   </label>
@@ -51,6 +91,22 @@
     <section> <b>7,017</b>, the most in NFL history. Peyton Manning (6,800) is second. </section>
     <section> <b>1,575</b> </section>
   </div>
+
+  <div class="graphs">
+    <label class="row">Career touchdown passes</label>
+  <%
+    for (var player in passes) {
+      var count = passes[player].count;
+      var team = passes[player].team || "";
+  %>
+    <div class="bar <%= team %>" style="width: <%= count / 530 * 100 %>%">
+      <span class="label"><%= player %> - <%= count %></span>
+    </div>
+  <%
+    }
+  %>
+  </div>
+
   <label class="row">
     Career playoff touchdown passes
   </label>
@@ -61,49 +117,5 @@
 
 </div>
 
-<div class="graphs">
-<%
-  var yardage = {
-    "Brett Favre": { count: 71838 },
-    "Peyton Manning": { count: 69691 },
-    "Dan Marino": { count: 61361 },
-    "Drew Brees": { count: 56033 },
-    "Tom Brady": { count: 53258, team: "patriots" },
-    "Russell Wilson": { count: 9950, team: "seahawks outside" }
-  };
-
-  var passes = {
-    "Peyton Manning": { count: 530 },
-    "Brett Favre": { count: 508 },
-    "Dan Marino": { count: 420 },
-    "Drew Brees": { count: 396 },
-    "Tom Brady": { count: 392, team: "patriots" },
-    "Russell Wilson": { count: 72, team: "seahawks outside" }
-  };
-%>
-  <h2>Career regular-season passing yards</h2>
-<%
-  for (var player in yardage) {
-    var count = yardage[player].count;
-    var team = yardage[player].team || "";
-%>
-  <div class="bar <%= team %>" style="width: <%= count / 71838 * 100 %>%">
-    <span class="label"><%= player %> - <%= grunt.template.formatNumber(count) %> yards</span>
-  </div>
-<%
-  }
-%>
-
-  <h2>Career touchdown passes</h2>
-<%
-  for (var player in passes) {
-    var count = passes[player].count;
-    var team = passes[player].team || "";
-%>
-  <div class="bar <%= team %>" style="width: <%= count / 530 * 100 %>%">
-    <span class="label"><%= player %> - <%= count %></span>
-  </div>
-<%
-  }
-%>
-</div>
+<p class="photo-credit">
+  Photos: Maddie Meyer/Getty, Elaine Thompson/Associated Press

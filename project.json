@@ -5,14 +5,14 @@
       "path": "apocryphal-squad"
     },
     "live": {
-      "bucket": "",
-      "path": ""
+      "bucket": "projects.seattletimes.com",
+      "path": "2015/sb-matchups"
     }
   },
-  "title": "",
-  "description": "",
-  "url": "",
-  "slug": "",
-  "tags": [],
-  "production": false
+  "title": "Superbowl Matchups",
+  "description": "A look at how the coaches, quarterbacks and star defensive backs compare in Super Bowl XLIX.",
+  "url": "http://projects.seattletimes.com/2015/sb-matchups",
+  "slug": "sb-matchups-interactive",
+  "tags": ["sports", "football", "super_bowl", "seahawks", "patriots"],
+  "production": true
 }

@@ -6,7 +6,7 @@
   padding-bottom: 20px;
 
   .content {
-    width: 700px;
+    width: 400px;
     margin: auto;
     color: white;
     position: relative;
@@ -17,6 +17,12 @@
       width: 100%;
       padding: 200px 8px 0;
     }
+  }
+
+  .instructions, .byline {
+    margin-top: 50px;
+    text-align: center;
+    color: #BBB;
   }
 
   h1, h2, h3 {
@@ -57,19 +63,19 @@
     &.left-side {
       left: 20px;
 
-      .startup & {
-        .transform(translateX(@x) translateY(@y) scale(@scale));
-        .transform(perspective(700px) translateX(@x) translateY(@y) rotateY(@rotate) scale(@scale));
-      }
+      // .startup & {
+      //   .transform(translateX(@x) translateY(@y) scale(@scale));
+      //   .transform(perspective(700px) translateX(@x) translateY(@y) rotateY(@rotate) scale(@scale));
+      // }
     }
 
     &.right-side {
-      right: 20px;
+      right: 40px;
 
-      .startup & {
-        .transform(translateX(-@x) translateY(@y) scale(@scale));
-        .transform(perspective(700px) translateX(-@x) translateY(@y) rotateY(-@rotate) scale(@scale));
-      }
+      // .startup & {
+      //   .transform(translateX(-@x) translateY(@y) scale(@scale));
+      //   .transform(perspective(700px) translateX(-@x) translateY(@y) rotateY(-@rotate) scale(@scale));
+      // }
     }
   }
 }
@@ -92,6 +98,12 @@
     @media @mobile {
       font-size: 36px;
     }
+  }
+
+  .photo-credit {
+    font-family: @body;
+    font-size: 12px;
+    text-align: right;
   }
 }
 
@@ -118,13 +130,22 @@
   padding: 8px;
   position: relative;
   z-index: 99;
+  line-height: 20px;
+  color: @light-gray;
+  font-size: 14px;
 
   .logo {
+    margin-right: 8px;
 
     img {
       margin-top: 5px;
       height: 20px;
+      vertical-align: bottom;
     }
+  }
+
+  .credit {
+    margin-right: 8px;
   }
 
   &::after {

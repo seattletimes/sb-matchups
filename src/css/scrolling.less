@@ -60,9 +60,19 @@
     @rotation: 10deg;
     @perspective: 500px;
 
+    @crop: -40px;
+
     &.left-side {
-      left: 0;
+      left: @crop * 3;
       transform-origin: left;
+
+      @media (min-width: 1200px) {
+        left: @crop;
+      }
+
+      @media (min-width: 1600px) {
+        left: 0px;
+      }
 
       .transform(translateX(-@distance));
       .transform(perspective(@perspective) translateX(-@distance) rotateY(@rotation));
@@ -70,8 +80,17 @@
     }
 
     &.right-side {
-      right: 0;
+      right: @crop * 3;
       transform-origin: right;
+
+      @media (min-width: 1200px) {
+        right: @crop;
+      }
+
+      @media (min-width: 1600px) {
+        right: 0px;
+      }
+
       .transform(translateX(@distance));
       .transform(perspective(@perspective) translateX(@distance) rotateY(-@rotation));
       @media @tablet { .transform(none) }

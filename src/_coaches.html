@@ -33,6 +33,27 @@
     <section> <b>175-65</b>, 15 seasons </section>
     <section> <b>50-30</b>, five seasons </section>
   </div>
+  <div class="graphs">
+    <label class="row">Career playoff wins, including playoffs</label>
+  <%
+    var wins = {
+      "Don Shula": { count: 347 },
+      "George Halas": { count: 324 },
+      "Tom Landry": { count: 270 },
+      "Bill Belichick": { count: 232, team: "patriots" },
+      "Pete Carroll": { count: 91, team: "seahawks outside" }
+    }
+    for (var coach in wins) {
+      var count = wins[coach].count;
+      var team = wins[coach].team || "";
+  %>
+    <div class="bar <%= team %>" style="width: <%= count / 347 * 100 %>%">
+      <span class="label"><%= coach %> - <%= count %></span>
+    </div>
+  <%
+    }
+  %>
+  </div>
   <label class="row">
     Career playoff record
   </label>
@@ -87,24 +108,5 @@
 
 </div>
 
-<div class="graphs">
-  <h2>Career playoff wins, including playoffs</h2>
-<%
-  var wins = {
-    "Don Shula": { count: 347, team: "patriots" },
-    "George Halas": { count: 324 },
-    "Tom Landry": { count: 270 },
-    "Bill Belichick": { count: 232 },
-    "Pete Carroll": { count: 91, team: "seahawks outside" }
-  }
-  for (var coach in wins) {
-    var count = wins[coach].count;
-    var team = wins[coach].team || "";
-%>
-  <div class="bar <%= team %>" style="width: <%= count / 347 * 100 %>%">
-    <span class="label"><%= coach %> (<%= count %>)</span>
-  </div>
-<%
-  }
-%>
-</div>
+<p class="photo-credit">
+  Photos: Jim Rogash/Getty, Elaine Thompson/Associated Press

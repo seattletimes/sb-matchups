@@ -1,28 +1,37 @@
 .graphs {
 
   h2 {
-    font-size: 20px;
-    font-family: @hed;
+    //font-size: 20px;
+    //font-family: @hed;
   }
 
   .bar {
-    height: 2em;
-    line-height: 2em;
-    background: @gray;
+    @h: 1.5em;
+
+    height: @h;
+    line-height: @h;
+    background: lighten(@gray, 10%);
     color: @light-gray;
     overflow: visible;
     padding-left: 4px;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     font-size: 14px;
     white-space: nowrap;
     position: relative;
+    text-align: left;
+
+    &.patriots, &.seahawks {
+      font-weight: bold;
+    }
+
+    @b: lighten(@seaBlue, 10%);
 
     &.patriots {
-      background: @patRed;
+      background: @b;//desaturate(@patRed, 10%);
     }
 
     &.seahawks {
-      background: darken(@seaGreen, 20%);
+      background: @b;//desaturate(@seaGreen, 30%);
     }
 
     &.outside {
