@@ -6,13 +6,13 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": "2015/sb-matchups"
+      "path": "2015/super-bowl-matchups"
     }
   },
-  "title": "Superbowl Matchups",
+  "title": "Super Bowl XLIX matchups",
   "description": "A look at how the coaches, quarterbacks and star defensive backs compare in Super Bowl XLIX.",
   "url": "http://projects.seattletimes.com/2015/sb-matchups",
   "slug": "sb-matchups-interactive",
-  "tags": ["sports", "football", "super_bowl", "seahawks", "patriots"],
+  "tags": ["sports", "football", "super" "bowl", "seahawks", "patriots"],
   "production": true
 }
