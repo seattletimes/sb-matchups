@@ -34,9 +34,14 @@
     position: fixed;
     top: 0;
     opacity: 0;
-    max-width: 50%;
+    max-width: 55%;
     height: 100%;
     display: none;
+
+    @media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 6/5) {
+      width: auto;
+      max-width: none;
+    }
 
     .ready & {
       display: block;
