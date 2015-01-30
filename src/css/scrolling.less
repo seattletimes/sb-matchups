@@ -74,6 +74,10 @@
         left: 0px;
       }
 
+      @media @tablet {
+        left: 0px;
+      }
+
       .transform(translateX(-@distance));
       .transform(perspective(@perspective) translateX(-@distance) rotateY(@rotation));
       @media @tablet { .transform(none) }
@@ -89,6 +93,10 @@
 
       @media (min-width: 1600px) {
         right: 0px;
+      }
+
+      @media @tablet {
+        right: 0;
       }
 
       .transform(translateX(@distance));
