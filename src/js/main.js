@@ -1,7 +1,17 @@
 /* esnext:true */
+
+//trigger web animations
+setTimeout(function() {
+  document.querySelector("main.startup").className = "ready";
+}, 200);
+
 var Share = require("share");
 
-new Share(".share");
+new Share(".share", {
+  ui: {
+    flyout: "bottom left"
+  }
+});
 new Share(".share-bottom", {
   ui: {
     flyout: "top left"

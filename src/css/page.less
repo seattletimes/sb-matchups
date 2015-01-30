@@ -1,10 +1,23 @@
 .intro {
-  width: 700px;
-  margin: auto;
-  color: white;
+  background: rgba(0, 0, 0, .4);
+  background: linear-gradient(to bottom, black, rgba(0, 0, 0, .1));
   position: relative;
-  z-index: 999;
-  padding: 100px 0;
+  z-index: 9;
+  padding-bottom: 20px;
+
+  .content {
+    width: 700px;
+    margin: auto;
+    color: white;
+    position: relative;
+    z-index: 99;
+    padding: 100px 0 0;
+
+    @media @mobile {
+      width: 100%;
+      padding: 200px 8px 0;
+    }
+  }
 
   h1, h2, h3 {
     font-family: @hed;
@@ -26,6 +39,39 @@
   h3 {
     font-size: 24px;
   }
+
+  .logo {
+    position: absolute;
+    z-index: 999;
+    top: 100px;
+    width: 30%;
+    .transform(translateX(0) translateY(0));
+    .transform(perspective(700px) translateX(0) translateY(0) rotateY(0) scale(1));
+    transition: transform 1s ease-out;
+
+    @x: 200%;
+    @y: -20%;
+    @scale: 3;
+    @rotate: 30deg;
+
+    &.left-side {
+      left: 20px;
+
+      .startup & {
+        .transform(translateX(@x) translateY(@y) scale(@scale));
+        .transform(perspective(700px) translateX(@x) translateY(@y) rotateY(@rotate) scale(@scale));
+      }
+    }
+
+    &.right-side {
+      right: 20px;
+
+      .startup & {
+        .transform(translateX(-@x) translateY(@y) scale(@scale));
+        .transform(perspective(700px) translateX(-@x) translateY(@y) rotateY(-@rotate) scale(@scale));
+      }
+    }
+  }
 }
 
 .matchup {
@@ -38,12 +84,20 @@
     margin: 0;
     text-align: center;
     text-shadow: 0 0 16px rgba(0, 0, 0, .7);
+
+    @media @tablet {
+      font-size: 48px;
+    }
+
+    @media @mobile {
+      font-size: 36px;
+    }
   }
 }
 
 .share, .share-bottom {
   margin: 0 auto 10px auto;
-  display: inline-block !important;
+  float: right;
 
   &.sharer-0 {
 
@@ -59,17 +113,8 @@
   }
 }
 
-.social {
-  text-align: center;
-}
-
-.share-bottom {
-  float: right;
-}
-
-footer {
+.top-bar, footer {
   background: #222;
-  opacity: 0.95;
   padding: 8px;
   position: relative;
   z-index: 99;

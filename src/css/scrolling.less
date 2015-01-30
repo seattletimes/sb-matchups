@@ -11,21 +11,21 @@
     z-index: 999;
     position: relative;
     margin: auto;
-    width: 40%;
-    padding: 200px 50px 0;
+    width: 45%;
+    padding: 400px 50px 0;
     height: 100%;
     // background: linear-gradient(to right, transparent 0, black 25%, black 75%, transparent 100%);
+
+    @media @tablet {
+      width: 80%;
+      margin: auto;
+      padding: 0;
+    }
 
     @media @mobile {
       background: transparent;
       width: 100%;
       clear: both;
-      padding: 0;
-    }
-
-    @media @tablet {
-      width: 80%;
-      margin: auto;
       padding: 0;
     }
   }
@@ -34,20 +34,26 @@
     position: fixed;
     top: 0;
     opacity: 0;
-    transition: opacity .3s linear, transform .2s ease-out;
     max-width: 50%;
     height: 100%;
+    display: none;
+
+    .ready & {
+      display: block;
+      @media @tablet { display: inline-block }
+      transition: opacity .3s linear, transform .2s ease-out;
+    }
 
     @media @tablet {
       position: relative;
-      display: inline-block;
       width: 30%;
       height: auto;
       opacity: 1;
     }
 
     @media @mobile {
-      width: 50%;
+      width: 40%;
+      margin-right: 3%;
     }
 
     @distance: 20%;
@@ -57,6 +63,7 @@
     &.left-side {
       left: 0;
       transform-origin: left;
+
       .transform(translateX(-@distance));
       .transform(perspective(@perspective) translateX(-@distance) rotateY(@rotation));
       @media @tablet { .transform(none) }
